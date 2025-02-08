@@ -19,4 +19,7 @@ void main(){
   test('Number separetd by new lines or commas should return their sum',(){
     expect(StringCalculator.add('4\n3,1'),equals(8));
   });
+  test("custoem delimiter should be supported",(){
+    expect(StringCalculator.add('//;\n1;2'), equals(3));
+  });
 }

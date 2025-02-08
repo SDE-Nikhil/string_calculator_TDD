@@ -3,7 +3,13 @@ class StringCalculator {
     if(numbers.isEmpty){
       return 0;
     }
-    List<String> nums =numbers.split(RegExp(r'[,\n]'));
+    String delimiter=',';
+    if(numbers.startsWith('//')){
+      int delimiterIndex =numbers.indexOf('\n');
+      delimiter= numbers.substring(2,delimiterIndex);
+      numbers=numbers.substring(delimiterIndex+1);
+    }
+    List<String> nums =numbers.split(RegExp('[$delimiter\n]'));
     int sum = 0 ;
     for(String num in nums){
       sum += int.parse(num);
