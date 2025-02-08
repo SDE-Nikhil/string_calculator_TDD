@@ -8,4 +8,7 @@ void main(){
   test('single number should return the number itself',(){
     expect(StringCalculator.add('1'),equals(1));
   });
+  test('single number should return the number itself', (){
+    expect(StringCalculator.add('1'),equals(1));
+  });
 }
