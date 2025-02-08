@@ -16,4 +16,7 @@ void main(){
 
     expect(StringCalculator.add('1,2,3,4,5'),equals(15));
   });
+  test('Number separetd by new lines or commas should return their sum',(){
+    expect(StringCalculator.add('4\n3,1'),equals(8));
+  });
 }

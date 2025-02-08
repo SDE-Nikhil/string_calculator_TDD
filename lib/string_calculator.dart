@@ -3,7 +3,7 @@ class StringCalculator {
     if(numbers.isEmpty){
       return 0;
     }
-    List<String> nums =numbers.split(',');
+    List<String> nums =numbers.split(RegExp(r'[,\n]'));
     int sum = 0 ;
     for(String num in nums){
       sum += int.parse(num);
