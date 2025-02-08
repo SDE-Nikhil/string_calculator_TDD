@@ -22,4 +22,9 @@ void main(){
   test("custoem delimiter should be supported",(){
     expect(StringCalculator.add('//;\n1;2'), equals(3));
   });
+  test('Negative numbers should throw an exception',(){
+    expect(()=> StringCalculator.add('1,-2,3,-4'),throwsA(predicate((e)=>
+    e is ArgumentError && e.message=="negative numbers not allowed: -2,-4"
+    )));
+  });
 }

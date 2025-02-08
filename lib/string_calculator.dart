@@ -11,8 +11,16 @@ class StringCalculator {
     }
     List<String> nums =numbers.split(RegExp('[$delimiter\n]'));
     int sum = 0 ;
+    List<String>negativeValue =[];
     for(String num in nums){
-      sum += int.parse(num);
+      int n =int.parse(num);
+      if(n<0){
+        negativeValue.add(num);
+      }
+      sum += n;
+    }
+    if(negativeValue.isNotEmpty){
+throw ArgumentError('Negative numbers nit aalowed:${negativeValue.join(', ')}');
     }
     return sum;
   }
