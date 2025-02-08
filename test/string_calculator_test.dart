@@ -8,7 +8,7 @@ void main(){
   test('single number should return the number itself',(){
     expect(StringCalculator.add('1'),equals(1));
   });
-  test('single number should return the number itself', (){
-    expect(StringCalculator.add('1'),equals(1));
+  test('two comma-separated numbers should retun their sum', (){
+    expect(StringCalculator.add('1,5'),equals(6));
   });
 }
